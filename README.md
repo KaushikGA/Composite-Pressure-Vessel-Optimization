@@ -29,3 +29,8 @@ Developed at **TU Dresden**, this framework automates the interaction between th
 *   `main_script.m`: The central orchestrator of the optimization loop.
 *   `run_generation.m`: Manages the parallel execution of the population.
 *   `getObjectiveVal.m`: Extracts structural results (Stress/Burst Pressure) from ODB files.
+
+## Sample Optimization history with a custom objective (Minimize shear stress concentraion + Minimize reinfocement maaterial usage + Maximize material safety factor )
+<p align="center">
+  <img src="sampleResult.gif" alt="Parametrized reinforcements for composite tanks" width="600"/>
+</p>
