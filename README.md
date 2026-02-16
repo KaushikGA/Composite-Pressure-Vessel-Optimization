@@ -1,3 +1,9 @@
+
+<!-- Display the GIF centered -->
+<p align="center">
+  <img src="tanks.gif" alt="Parametrized reinforcements for composite tanks" width="600"/>
+</p>
+
 # Evolutionary Optimization Framework for Composite Pressure Vessels
 
 ## Overview
