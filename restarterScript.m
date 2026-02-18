@@ -2,7 +2,7 @@ clc; clear all; close all;
 
 Initialize_optimizer
 rng default
-load C:\Abaqus_temp\ICAM\Scenarios\case7_barkanov_iter5\OptimizerRuns\Barkanov_30\Data_Folder\matbackup_30.mat
+%load C:\Abaqus_temp\ICAM\Scenarios\case7_barkanov_iter5\OptimizerRuns\Barkanov_30\Data_Folder\matbackup_30.mat
 
 
 mostAdvancedGenID=length(optRec.meanTopPerformances)-1;
