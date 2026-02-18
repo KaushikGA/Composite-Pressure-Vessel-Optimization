@@ -9,7 +9,11 @@
 ## Overview
 This repository contains the core algorithmic implementation of an **NSGA-II (Non-dominated Sorting Genetic Algorithm)** used to optimize Type-IV composite pressure vessels (COPVs). 
 
-Developed at **TU Dresden**, this framework automates the interaction between the optimization engine and the Finite Element solver (**Abaqus**), enabling the generative design of complex composite layups.
+Developed at **TU Dresden**, this framework automates the interaction between the optimization engine and the Finite Element solver (**Abaqus**), enabling the generative design of complex composite layups. 
+
+<p align="center">
+  <img src="Optimizer_architecture.png" alt="Architecture of optimizer" width="600"/>
+</p>
 
 ## Key Features
 *   **Custom Genetic Operators:** Implementation of Double Point Crossover (`DoublePointCrossover.m`) and Polynomial Mutation from scratch, specifically designed for discrete composite layup vectors.
