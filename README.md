@@ -38,3 +38,31 @@ Developed at **TU Dresden**, this framework automates the interaction between th
 <p align="center">
   <img src="sampleResult.gif" alt="Parametrized reinforcements for composite tanks" width="600"/>
 </p>
+
+## System Architecture: The Automation Loop
+
+This framework completely decouples the evolutionary algorithm from the physics solver, allowing for resilient, multi-threaded optimization.
+
+```mermaid
+graph TD
+    A[main_script.m<br>Initialize Population] --> B(Core Algorithm)
+    
+    subgraph Optimizer
+    B --> |Crossover & Mutation| C[Generate Design Vectors]
+    end
+    
+    subgraph Automation Interface
+    C -->|Parametric Translation| D[writeINP.m<br>Generate Abaqus Inputs]
+    D --> E[run_generation.m<br>Spawn HPC Processes]
+    E --> F{Solver Crash / License Limit?}
+    F -- Yes --> G[killAllAbaqusProcesses.m<br>Clean OS Threads]
+    G --> E
+    F -- No --> H[Abaqus FEA Solvers]
+    end
+    
+    subgraph Data Extraction
+    H --> I[getObjectiveVal.m<br>Parse ODB/Logs]
+    I --> J[Evaluate Fitness & Constraints]
+    end
+    
+    J --> |Next Generation| B
